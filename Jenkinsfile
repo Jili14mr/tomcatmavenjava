@@ -13,7 +13,7 @@ node {
         //script {
           def datas = readYaml file: 'release.yml'
           echo "Got version as ${datas.first} "
-          sh "cd /var/lib/jenkins/.m2/repository/com/jenkins/demo/JenkinsWar1/0.0.1-SNAPSHOT/"
+          sh "cd /var/lib/jenkins/.m2/repository/com/jenkins/demo/JenkinsWar1/0.0.1-SNAPSHOT/target"
           sh "ls"
       //  }
        
