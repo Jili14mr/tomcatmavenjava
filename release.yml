@@ -1,0 +1,8 @@
+ first: myappv
+ second: uat
+ artifcatfile: tomcat
+ uainame: 2345678
+ appname: myapp8
+ environment: UAT
+ cluster: 2356
+ artifactname: tomcat
