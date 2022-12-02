@@ -5,4 +5,4 @@
  appname: myapp8
  environment: UAT
  cluster: 2356
- artifactname: tomcat
+ artifactname: JenkinsWar.war
