@@ -18,7 +18,7 @@ node {
           echo "Got version as ${datas.appname} "
           //sh '''
          sh "echo Got version as ${datas.appname} "
-         sh "cd /var/lib/jenkins/workspace/Buildjob/target && curl -k  --user ${artifactory_log_User}:${artifactory_log_Password} -X PUT https://artifactory.build.ge.com/artifactory//SXZZG/GPWebUtility/Applications/${datas.uainame}/${datas.appname}/${datas.environment}/${datas.cluster}/${BUILD_NUMBER}/${datas.artifactname} -H 'Content-Type: application/data' --upload-file ${datas.artifactname}"
+         sh "cd /var/lib/jenkins/workspace/Buildjob/target && curl -k  --user "${artifactory_log_User}":"${artifactory_log_Password}" -X PUT https://artifactory.build.ge.com/artifactory//SXZZG/GPWebUtility/Applications/${datas.uainame}/${datas.appname}/${datas.environment}/${datas.cluster}/${BUILD_NUMBER}/${datas.artifactname} -H 'Content-Type: application/data' --upload-file ${datas.artifactname}"
          
          
            //destination_Artifactory=https://artifactory.build.ge.com/artifactory/
