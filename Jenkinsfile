@@ -14,13 +14,14 @@ node {
           def datas = readYaml file: 'release.yml'
           echo "Got version as ${datas.first} "
           echo "Got version as ${datas.appname} "
-          sh " cd/var/lib/jenkins/workspace/Buildjob/target"
-          sh "ls"
+          sh '''
+          cd/var/lib/jenkins/workspace/Buildjob/target
+          ls
           //destination_Artifactory=https://artifactory.build.ge.com/artifactory/
          // path=SXZZG/GPWebUtility/Applications/${UAI}/${datas.appname}/
-          sh "curl -k  --user ${artifactory_log_User}:${artifactory_log_Password} -X PUT https://artifactory.build.ge.com/artifactory/SXZZG/GPWebUtility/Applications/${datas.appname} -H 'Content-Type: application/data' --upload-file ${datas.artifactname}"
+          curl -k  --user ${artifactory_log_User}:${artifactory_log_Password} -X PUT https://artifactory.build.ge.com/artifactory/SXZZG/GPWebUtility/Applications/${datas.appname} -H 'Content-Type: application/data' --upload-file ${datas.artifactname}
    
-   
+        '''
       //  }
        
      // }
