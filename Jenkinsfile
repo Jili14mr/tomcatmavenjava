@@ -15,7 +15,7 @@ node {
           echo "Got version as ${datas.first} "
           echo "Got version as ${datas.appname} "
           sh '''
-          cd/var/lib/jenkins/workspace/Buildjob/target
+          cd /var/lib/jenkins/workspace/Buildjob/target
           ls
           //destination_Artifactory=https://artifactory.build.ge.com/artifactory/
          // path=SXZZG/GPWebUtility/Applications/${UAI}/${datas.appname}/
