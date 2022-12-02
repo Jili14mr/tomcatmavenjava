@@ -17,11 +17,10 @@ node {
           sh '''
           cd /var/lib/jenkins/workspace/Buildjob/target
           ls
-          //destination_Artifactory=https://artifactory.build.ge.com/artifactory/
-         // path=SXZZG/GPWebUtility/Applications/${UAI}/${datas.appname}/
-          curl -k  --user ${artifactory_log_User}:${artifactory_log_Password} -X PUT https://artifactory.build.ge.com/artifactory/SXZZG/GPWebUtility/Applications/${datas.appname} -H 'Content-Type: application/data' --upload-file ${datas.artifactname}
-   
-        '''
+           destination_Artifactory=https://artifactory.build.ge.com/artifactory/
+          path=SXZZG/GPWebUtility/Applications/${datas.uainame}/${datas.appname}/${datas.environment}/${datas.cluster}/${BUILD_NUMBER}/${datas.artifactname}
+         curl -k  --user ${artifactory_log_User}:${artifactory_log_Password} -X PUT $destination_Artifactory/$path -H 'Content-Type: application/data' --upload-file ${datas.artifactname}
+        '''  
       //  }
        
      // }
